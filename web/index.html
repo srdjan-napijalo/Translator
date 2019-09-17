@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="sr">
+    <head>
+        <title>Web Translator</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+    </head>
+    <body>
+            <h1 align="center">Translator:</h1>
+            <form role="form">
+                <hr>
+                 <h2 align="center">Translate now!</h2>
+                 <div id="format" align="center">
+                    <label for="srcLang">From:</label>
+                    <select id="srcLang" name="src" required="">
+                        <option value="" disabled="" selected="">
+                        Choose</option>
+                        <option value="english">English</option>
+                        <option value="serbian">Serbian</option>
+                        <option value="german">German</option>
+                    </select>
+                    <label for="dstLang"> To:</label>
+                    <select id="dstLang" name="dst" required="">
+                        <option value="" disabled="" selected="">
+                        Choose</option>
+                        <option value="english">English</option>
+                        <option value="serbian">Serbian</option>
+                        <option value="german">German</option>
+                    </select>
+                </div>
+                <div id="input" align="center">
+                    <label for="word">Word:</label>      
+                    <input type="text" placeholder="Some word..." id="word" name="word"/>
+                    <span id="hintSpan"></span><br>
+                    <button type="button" name="button" value="button1" onclick="translate(this)">Translate</button><br>
+                    <label>Translation:</label><span id="demo"></span>
+                    <br/>
+                </div>  
+                 <hr>
+            </form>
+            
+            <form role="form">
+                <hr>
+                <h2>Or Insert NEW Word</h2>
+                <div align="center">
+                <button type="button" name="button" value="button2" onclick="translate(this)">Insert!</button>
+                </div>
+                <div id="out"  align="center"> 
+                <input type="text" placeholder="ENG"  id="eng"/>
+                <input type="text" placeholder="SRB"  id="srb"/>
+                <input type="text" placeholder="GER"  id="ger"/>
+                <span id="hintSpan2"></span>
+                </div>
+                <hr>
+            </form>
+            <script src="myScript.js"></script>
+    </body>
+</html>

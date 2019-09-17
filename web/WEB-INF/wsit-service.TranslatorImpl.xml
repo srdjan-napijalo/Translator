@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="TranslatorImplService" targetNamespace="http://service/" xmlns:tns="http://service/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" 
+ >
+    <message name="translate"/>
+    <message name="translateResponse"/>
+    <message name="addWord"/>
+    <message name="addWordResponse"/>
+    <message name="main"/>
+    <message name="mainResponse"/>
+    <portType name="TranslatorImpl">
+        <operation name="translate">
+            <input message="tns:translate"/>
+            <output message="tns:translateResponse"/>
+        </operation>
+        <operation name="addWord">
+            <input message="tns:addWord"/>
+            <output message="tns:addWordResponse"/>
+        </operation>
+        <operation name="main">
+            <input message="tns:main"/>
+            <output message="tns:mainResponse"/>
+        </operation>
+    </portType>
+    <binding name="TranslatorImplPortBinding" type="tns:TranslatorImpl">
+        <operation name="translate">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="addWord">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="main">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="TranslatorImplService">
+        <port name="TranslatorImplPort" binding="tns:TranslatorImplPortBinding"/>
+    </service>
+</definitions>
