@@ -27,7 +27,7 @@ public class TranslatorImpl implements Translator {
             
             
                 DocumentBuilder db = dbf.newDocumentBuilder();
-                Document doc = db.parse("prevodilac.xml");
+                Document doc = db.parse("translator.xml");
                 Element root = doc.getDocumentElement();
                 NodeList words = root.getChildNodes();
         for(int i=0; i<words.getLength();i++)
@@ -92,7 +92,7 @@ public class TranslatorImpl implements Translator {
             dbf.setIgnoringElementContentWhitespace(true);
         try {
                 DocumentBuilder db = dbf.newDocumentBuilder();
-                Document doc = db.parse("prevodilac.xml");
+                Document doc = db.parse("translator.xml");
                 Element root = doc.getDocumentElement();
                 nWord = doc.createElement("word");
                 lang1 = doc.createElement("english");
@@ -108,7 +108,7 @@ public class TranslatorImpl implements Translator {
                 DOMSource source = new DOMSource(doc);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
-        StreamResult result = new StreamResult("prevodilac.xml");
+        StreamResult result = new StreamResult("translator.xml");
         transformer.transform(source, result);
                 return ("Uspesno dodata rec{ Eng: "+eng+", Srb: "+srb+", Ger: "+ger+"}");
             } catch (ParserConfigurationException | SAXException | IOException | TransformerException ex)  
